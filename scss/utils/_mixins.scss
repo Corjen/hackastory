@@ -1,0 +1,23 @@
+
+/* Rem-Calc
+   ========================================================================== */
+@function rem-calc($px-value, $rem-base: 16) {
+  //If default font-size is 16 then rem is px-value / rem-base
+  $value: $px-value / $rem-base;
+  @return $value * 1rem;
+}
+
+/* Transition mixin
+   ========================================================================== */
+
+@mixin transition($property:all, $duration:.5s, $method:ease-in-out) {
+  transition: $property $duration $method;
+}
+
+/* Square
+   ========================================================================== */
+
+@mixin square($size) {
+  width: $size;
+  height: $size
+}

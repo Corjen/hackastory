@@ -1,0 +1,116 @@
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+$base-font-size: 100%;
+// $rem-base: 16px;
+$base-line-height: 1.5rem;
+
+$primary-font-family: 'open sans', sans-serif;
+$header-font-family: 'merriweather', serif;
+
+$header-font-family: $header-font-family;
+$header-font-weight: bold;
+$header-font-color: #434444;
+$header-line-height: 1.4;
+$header-top-margin: .2rem;
+$header-bottom-margin: .5rem;
+$header-text-rendering: optimizeLegibility;
+$header-text-align: left;
+
+//We use these to style paragraphs
+$paragraph-font-family: inherit;
+$paragraph-font-weight: 300;
+$paragraph-font-size: rem-calc(16);
+$paragraph-line-height: $base-line-height;
+$paragraph-margin-bottom: rem-calc(16);
+
+// We use these to control header font sizes
+$h1-font-size: rem-calc(45);
+$h2-font-size: rem-calc(30);
+$h3-font-size: rem-calc(27);
+
+// We use these to control header size reduction on small screens
+$h1-small-font-size: rem-calc(30);
+$h2-small-font-size: rem-calc(16);
+$h3-small-font-size: rem-calc(12);
+
+// We use these to style anchors
+$anchor-text-decoration: none;
+$anchor-font-color: $primary-color;
+$anchor-font-color-hover: scale-color($anchor-font-color, $lightness: -20%);
+$anchor-transition: all .5s ease;
+
+/* ==========================================================================
+   Default typography
+   ========================================================================== */
+
+html,
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  color: $primary-font-color;
+  font-family: $primary-font-family;
+  font-weight: 300;
+  font-size: 100%; /* Base font size */
+}
+
+/* Heading
+   ========================================================================== */
+h1,
+h2,
+h3 {
+  margin-top: $header-top-margin;
+  margin-bottom: $header-bottom-margin;
+  color: $header-font-color;
+  font-weight: $header-font-weight;
+  font-family: $header-font-family;
+  line-height: $header-line-height;
+  text-rendering: $header-text-rendering;
+  text-align: $header-text-align;
+  font-style: italic;
+}
+
+h1 { font-size: $h1-small-font-size; }
+h2 { font-size: $h2-small-font-size; }
+h3 { font-size: $h3-small-font-size; }
+
+@media #{$medium-up} {
+
+  h1 { font-size: $h1-font-size; }
+  h2 { font-size: $h2-font-size; }
+  h3 { font-size: $h3-font-size; }
+
+}
+
+/* Paragraph settings
+   ========================================================================== */
+
+p {
+  margin-bottom: $paragraph-margin-bottom;
+  font-weight: $paragraph-font-weight;
+  font-family: inherit;
+  line-height: $paragraph-line-height;
+  text-rendering: optimizeLegibility;
+
+  &.large {
+    font-size: 1.2rem;
+  }
+
+  &.small {
+    font-size: .9rem;
+  }
+}
+
+/* Anchor settings
+   ========================================================================== */
+a {
+  color: $primary-color;
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+    color: darken($primary-color, 10%);
+  }
+
+}

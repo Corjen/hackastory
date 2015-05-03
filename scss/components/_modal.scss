@@ -1,0 +1,32 @@
+.modal {
+  width: 70%;
+  height: auto;
+  max-height: 80vh;
+  margin-top: 10vh;
+  margin-left: 15%;
+  padding: 16px;
+  color: $white;
+  background: rgba(0, 0, 0, .8);
+  display: none;
+  overflow: auto;
+
+  &:after {
+    display: block;
+    content: '';
+    clear: both;
+  }
+  h1 {
+    color: inherit;
+  }
+
+  &__text,
+  &__image {
+    float: left;
+    width: 100%;
+    padding: 16px;
+  }
+
+  video {
+    width: 100%;
+  }
+}

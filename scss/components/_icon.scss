@@ -1,0 +1,60 @@
+/* Mixin
+   ========================================================================== */
+@mixin icon-circle-size($size) {
+  $icon-size : $size - 1.5;
+  @include square($size);
+
+  .icon-circle__icon {
+    margin-top: ($size - $icon-size) / 2;
+    // margin-left: ($size - $icon-size) / 2;
+    @include square($icon-size);
+  }
+}
+
+@mixin icon-circle-color($color) {
+  background: rgba($color, .8);
+  &:hover {
+    background: rgba($color, 1);
+  }
+}
+
+
+.icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  display: inline-block;
+  fill: $primary-font-color;
+  position: relative;
+}
+
+.icon-circle {
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  @include transition(background);
+  &__icon {
+    fill: $white;
+  }
+  &--large {
+    @include icon-circle-size(5rem);
+  }
+  &--medium {
+    @include icon-circle-size(4rem);
+  }
+  &--small {
+    @include icon-circle-size(3rem);
+  }
+
+  &--blue {
+    @include icon-circle-color(#3b4355);
+  }
+  &--green {
+    @include icon-circle-color($primary-color);
+  }
+  &--white {
+    @include icon-circle-color($white);
+    .icon-circle__icon {
+      fill: $primary-font-color;
+    }
+  }
+}

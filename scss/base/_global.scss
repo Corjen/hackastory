@@ -1,0 +1,28 @@
+
+/* img
+   ========================================================================== */
+img {
+  display: inline-block;
+  height: auto;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+/* comment
+   ========================================================================== */
+svg {
+  vertical-align: middle;
+}
+
+
+/* box sizing
+   ========================================================================== */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
